@@ -23,7 +23,12 @@ public class UsedProduct extends Product{
 	@Override
 	public String priceTag() {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		return "(used) $ " + super.getPrice() + " (Manufacture date: " + sdf.format(manufactureDate) + " )"; 
+		return 
+				super.getName() 
+				+ " (used) $ " 
+				+ String.format("%.2f", super.getPrice()) 
+				+ " (Manufacture date: " 
+				+ sdf.format(manufactureDate) + ")"; 
 		
 	}
 
